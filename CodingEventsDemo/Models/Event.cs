@@ -10,23 +10,25 @@ namespace CodingEventsDemo.Models
         public string Description { get; set; }
 
         public string ContactEmail { get; set; }
+        public string Location { get; set; }
+        public int NumOfAttendee { get; set; }
 
         public int Id { get; }
         static private int nextId = 1;
 
-        public Event(string name, string description, string contactEmail)
+         public Event()
         {
-            Name = name;
-            Description = description;
-            ContactEmail = contactEmail;
             Id = nextId;
             nextId++;
         }
 
-        public Event()
+        public Event(string name, string description, string contactEmail, string location, int numOfAttendee) : this()
         {
-            Id = nextId;
-            nextId++;
+            Name = name;
+            Description = description;
+            ContactEmail = contactEmail;
+            Location = location;
+            NumOfAttendee = numOfAttendee;
         }
 
         public override string ToString()
